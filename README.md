@@ -6,6 +6,7 @@
 
 # :gem: Gems 
 * capybara
+* devise
 * rspec_rails
 
 # :rocket: Intruções
