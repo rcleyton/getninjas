@@ -1,9 +1,10 @@
-<p>
-  <%= link_to 'Solicitar orçamento', new_order_path, class: "btn btn-primary" %>
-</p>
+<% unless current_user.professional?%>
+  <p>
+    <%= link_to 'Solicitar orçamento', new_order_path, class: "btn btn-primary" %>
+  </p>
+<% end %>
 
-<hr>
-<h3>Meus Orçamentos</h3>
+<h3>Pedidos de orçamentos</h3>
 
 <ul class="list-group list-group-flush">
   <% @orders.each do |order| %>

@@ -11,7 +11,9 @@
         Home <span class="sr-only">(current)
       </span></a>
       <% if user_signed_in? %>
-        <%= link_to 'Criar Perfil', new_profile_path, class: 'nav-item nav-link' %>
+        <% if current_user.customer?%>
+          <%= link_to 'Meu Perfil', current_user.profile, class: 'nav-item nav-link' %>
+        <% end %>
         <%= link_to 'Sair', destroy_user_session_path, class: 'nav-item nav-link' %>
       <% end %>
     </div>

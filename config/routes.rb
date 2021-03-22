@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   root 'dashboard#index'
   devise_for :users
 
-  resources :profiles, only: %i[index show new create]
+  resources :profiles, only: %i[index show new create edit update]
   resources :orders, only: %i[show new create]
 end

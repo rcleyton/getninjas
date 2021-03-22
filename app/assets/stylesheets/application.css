@@ -15,7 +15,7 @@
  *= require_self
  */
 
- hr, h1, h2 {
+ hr, h3, h2, .btn {
    margin-bottom: 2rem;
  }
 
