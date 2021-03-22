@@ -3,6 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_one :profile
+  has_many :orders, through: :profile
   
   enum role: { customer: 0, professional: 10 }
   after_initialize :set_default_role, :if => :new_record?

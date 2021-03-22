@@ -4,3 +4,9 @@
 
 <hr>
 <h3>Meus Orçamentos</h3>
+
+<ul class="list-group list-group-flush">
+  <% @orders.each do |order| %>
+      <li class="list-group-item"><%= link_to order.question_1, order %></li>
+  <% end %>
+</ul>
