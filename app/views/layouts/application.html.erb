@@ -12,9 +12,9 @@
 
   <body>
     <%= render 'layouts/shared/nav' %>
+    <%= render 'layouts/shared/flash_messages' %>
     <div class='container'>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+
       <%= yield %>
     </div>
   </body>
