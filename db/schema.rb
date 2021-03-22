@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_21_172448) do
+ActiveRecord::Schema.define(version: 2021_03_22_033920) do
+
+  create_table "orders", force: :cascade do |t|
+    t.string "question_1"
+    t.string "question_2"
+    t.string "question_3"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "profile_id", null: false
+    t.index ["profile_id"], name: "index_orders_on_profile_id"
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string "name"
@@ -39,5 +51,6 @@ ActiveRecord::Schema.define(version: 2021_03_21_172448) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orders", "profiles"
   add_foreign_key "profiles", "users"
 end

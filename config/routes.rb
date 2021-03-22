@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :profiles, only: %i[show new create]
-
+  resources :orders, only: %i[show new create]
 end

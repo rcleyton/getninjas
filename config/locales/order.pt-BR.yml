@@ -1,0 +1,12 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      order: Pedido
+    attributes:
+      order:
+        question_1: Informe a categoria do serviço
+        question_2: Informe a subcategoria do serviço
+        question_3: Informe os detalhes do serviço
+        created_at: Criado em
+        updated_at: Atualizado em

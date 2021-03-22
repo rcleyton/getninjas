@@ -1,0 +1,17 @@
+<h1>Pedidos</h1>
+
+<ul class="list-group">
+  <li class="list-group-item">Nome: <%= @order.profile.name %></li>
+  <li class="list-group-item">Email: <%= current_user.email %></li>
+  <li class="list-group-item">Telefone: <%= @order.profile.phone %></li>
+  <li class="list-group-item">Cidade: <%= @order.profile.city %></li>
+  <li class="list-group-item">Rua: <%= @order.profile.street %></li>
+  <li class="list-group-item">Bairro: <%= @order.profile.neighborhood %></li>
+  <li class="list-group-item">CEP: <%= @order.profile.zip_code %></li>
+  <li class="list-group-item">UF: <%= @order.profile.state %></li>
+  <li class="list-group-item">Pergunta1: <%= @order.question_1 %></li>
+  <li class="list-group-item">Pergunta2: <%= @order.question_2%></li>
+  <li class="list-group-item">Pergunta3: <%= @order.question_3 %></li>
+  <li class="list-group-item">Latitude: <%= @order.latitude %></li>
+  <li class="list-group-item">Longitude: <%= @order.longitude %></li>
+</ul>

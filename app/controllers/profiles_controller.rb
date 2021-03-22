@@ -2,6 +2,9 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    if current_user.profile != @profile
+      redirect_to root_path
+    end
   end
   
   def new
