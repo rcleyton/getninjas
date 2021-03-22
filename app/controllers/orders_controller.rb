@@ -11,6 +11,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     if @order.save
+      flash[:success] = "Pedido criado com sucesso"
       redirect_to @order
     else
       render :new
