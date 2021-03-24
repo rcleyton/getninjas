@@ -66,6 +66,28 @@ essa solicitação é executada e através do endereço é obtido a latitude e l
 essa informações são persistidas no banco e ficam disponível na view. Quando o processo de
 solicitação é concluído, é posível visualizar os dados do Cliente, as questões e os dados geográficos.
 
+# Instruções
+Clone o repositório 
+```
+git clone git@github.com:rcleyton/teste-getninjas.git
+```
+Acesse o diretório 
+```
+cd teste-getninjas
+```
+Faça o build 
+```
+docker-compose build
+```
+Para levantar o app
+```
+docker-compose up
+```
+Rodar e popular o banco
+```
+docker-compose exec app bundle exec rake db:setup db:migrate
+```
+
 # Testes
 
 Para rodar todos os teste

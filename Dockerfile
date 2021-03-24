@@ -1,6 +1,6 @@
 FROM ruby:2.7.2-alpine
 
-ENV BUNDLER_VERSION=2.0.2
+ENV BUNDLER_VERSION=2.2.13
 
 RUN apk add --update --no-cache \
       binutils-gold \
@@ -28,7 +28,7 @@ RUN apk add --update --no-cache \
       tzdata \
       yarn
 
-RUN gem install bundler -v 2.0.2
+RUN gem install bundler -v 2.2.13
 
 WORKDIR /app
 
