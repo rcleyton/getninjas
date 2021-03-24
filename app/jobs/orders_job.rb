@@ -1,5 +1,5 @@
 class OrdersJob < ApplicationJob
-  queue_as :orders
+  queue_as :default
 
   def perform(id)
     sleep 15

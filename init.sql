@@ -1,0 +1,2 @@
+CREATE USER picole;
+ALTER USER picole WITH SUPERUSER;
