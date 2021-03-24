@@ -5,3 +5,37 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Criando usuários..."
+User.create!([
+  { email: "customer@customer.com", password: "customer", role: 0 },
+  { email: "customer2@customer.com", password: "customer2", role: 0 },
+  { email: "professional@professional.com", password: "professional", role: 10 }
+])
+puts "Usuários cadastrados com sucesso"
+
+puts "Criando perfil do usuário..."
+Profile.create!([
+  { user_id: 1, name: "Leo Gill", phone: "(11) 98877-6655", city: "São Paulo",
+   neighborhood: "Pinheiros", street: "Avenida Rebouças", zip_code: "05402-600",
+   state: "SP" },
+  { user_id: 2, name: "June Cha", phone: "(11) 96655-8877", 
+    city: "Itapecerica da Serra", neighborhood: "Centro", 
+    street: "Rua Pedro José Rotger Domingues", zip_code: "06850-110", state: "SP" }
+])
+puts "Perfil criado com sucesso"
+
+puts "Cadastrando pedidos"
+Order.create!([
+  { profile_id: 1, question_1: "Serviço automotivo", question_2: "Funilaria",
+    question_3: "Pintura do teto"},
+
+  { profile_id: 1, question_1: "Procuro encanador", question_2: "Vazamento",
+    question_3: "Vazamento de água na cozinha"},
+
+  { profile_id: 1, question_1: "Marcenaria", question_2: "Reforma",
+    question_3: "Reformar armário antigo"},
+
+  { profile_id: 2, question_1: "Procuro pedreiro", question_2: "Construção",
+    question_3: "Fazer um muro novo"}
+])
+puts "Pedidos cadastrado com sucesso"
