@@ -1,7 +1,11 @@
 <h3>Solicitar orçamento</h3>
 
+<% @order.errors.full_messages do |msg| %>
+  <%= flash[:error] = msg %>
+<% end %>
+
 <%= form_with model: @order, local: true do |f| %>
-  <%= f.hidden_field :profile_id, value: current_user.id %>
+  <%= f.hidden_field :profile_id, value: current_user.profile.id %>
 
   <div class="form-group">
     <%= f.label :question_1%>
