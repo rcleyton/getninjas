@@ -2,7 +2,7 @@
 
 <ul class="list-group">
   <li class="list-group-item">Nome: <%= @order.profile.name %></li>
-  <li class="list-group-item">Email: <%= current_user.email %></li>
+  <li class="list-group-item">Email: <%= @order.profile.user.email %></li>
   <li class="list-group-item">Telefone: <%= @order.profile.phone %></li>
   <li class="list-group-item">Cidade: <%= @order.profile.city %></li>
   <li class="list-group-item">Rua: <%= @order.profile.street %></li>
