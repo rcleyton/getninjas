@@ -92,9 +92,9 @@ docker-compose exec app bundle exec rake db:setup db:migrate
 
 Para rodar todos os teste
 ```
-rspec
+docker-compose exec app bundle exec rspec
 ```
 Para rodar um teste específico. Ex:
 ```
-rspec ./spec/features/customer_requests_a_service_spec.rb
+docker-compose exec app bundle exec rspec ./spec/features/customer_requests_a_service_spec.rb  
 ```

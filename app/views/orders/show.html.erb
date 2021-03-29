@@ -1,17 +1,41 @@
 <h3>Pedidos</h3>
 
-<ul class="list-group">
-  <li class="list-group-item">Nome: <%= @order.profile.name %></li>
-  <li class="list-group-item">Email: <%= @order.profile.user.email %></li>
-  <li class="list-group-item">Telefone: <%= @order.profile.phone %></li>
-  <li class="list-group-item">Cidade: <%= @order.profile.city %></li>
-  <li class="list-group-item">Rua: <%= @order.profile.street %></li>
-  <li class="list-group-item">Bairro: <%= @order.profile.neighborhood %></li>
-  <li class="list-group-item">CEP: <%= @order.profile.zip_code %></li>
-  <li class="list-group-item">UF: <%= @order.profile.state %></li>
-  <li class="list-group-item">Pergunta1: <%= @order.question_1 %></li>
-  <li class="list-group-item">Pergunta2: <%= @order.question_2%></li>
-  <li class="list-group-item">Pergunta3: <%= @order.question_3 %></li>
-  <li class="list-group-item">Latitude: <%= @order.latitude %></li>
-  <li class="list-group-item">Longitude: <%= @order.longitude %></li>
-</ul>
+<div class="card info">
+  <div class="card-header">
+    Dados:
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Nome: <%= @order.profile.name %></li>
+    <li class="list-group-item">Email: <%= @order.profile.user.email %></li>
+    <li class="list-group-item">Telefone: <%= @order.profile.phone %></li>
+    <li class="list-group-item">Cidade: <%= @order.profile.city %></li>
+    <li class="list-group-item">Rua: <%= @order.profile.street %></li>
+    <li class="list-group-item">Bairro: <%= @order.profile.neighborhood %></li>
+    <li class="list-group-item">CEP: <%= @order.profile.zip_code %></li>
+    <li class="list-group-item">UF: <%= @order.profile.state %></li>
+  </ul>
+</div>
+
+<div class="card info">
+  <div class="card-header">
+    Dados da solicitação:
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Pergunta 1: <%= @order.question_1 %></li>
+    <li class="list-group-item">Pergunta 2: <%= @order.question_2%></li>
+    <li class="list-group-item">Pergunta 3: <%= @order.question_3 %></li>
+  </ul>
+</div>
+
+<% if current_user.professional? %>
+  <div class="card info">
+    <div class="card-header">
+      Geolocalização:
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Resposta: <%= @order.response %></li>
+      <li class="list-group-item">Latitude: <%= @order.latitude %></li>
+      <li class="list-group-item">Longitude: <%= @order.longitude %></li>
+    </ul>
+  </div>
+<% end %>

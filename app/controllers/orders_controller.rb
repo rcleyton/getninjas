@@ -22,6 +22,6 @@ class OrdersController < ApplicationController
   private
   def order_params
     params.require(:order).permit(:question_1, :question_2, :question_3,
-                                  :latitude, :longitude, :profile_id)
+                                  :response, :latitude, :longitude, :profile_id)
   end
 end

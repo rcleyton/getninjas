@@ -8,5 +8,6 @@ pt-BR:
         question_1: Informe a categoria do serviço
         question_2: Informe a subcategoria do serviço
         question_3: Informe os detalhes do serviço
+        response: Resposta
         created_at: Criado em
         updated_at: Atualizado em
