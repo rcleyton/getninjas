@@ -1,6 +1,6 @@
 <% unless current_user.professional?%>
   <p>
-    <%= link_to 'Solicitar orçamento', new_order_path, class: "btn btn-primary" %>
+    <%= link_to 'Solicitar orçamento', new_order_path, class: "btn btn-dark" %>
   </p>
 <% end %>
 
@@ -8,6 +8,8 @@
 
 <ul class="list-group list-group-flush">
   <% @orders.each do |order| %>
-      <li class="list-group-item"><%= link_to order.question_1, order %></li>
+      <li class="list-group-item">
+        <%= link_to order.question_1, order %>
+      </li>
   <% end %>
 </ul>
