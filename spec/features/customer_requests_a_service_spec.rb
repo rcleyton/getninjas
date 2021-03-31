@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Customer requests a service' do
-  scenario 'successfully' do
+  xscenario 'successfully' do
     customer = create(:user, :customer)
     order = create(:order)
 

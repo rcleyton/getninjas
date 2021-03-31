@@ -15,6 +15,7 @@ class OrdersJob < ApplicationJob
       order.longitude = 0.0
     else
       lat_lon = results.first.coordinates
+      order.response = "Sucesso"
       order.latitude = lat_lon[0]
       order.longitude = lat_lon[1]
     end

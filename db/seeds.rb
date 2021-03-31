@@ -27,15 +27,19 @@ puts "Perfil criado com sucesso"
 puts "Cadastrando pedidos"
 Order.create!([
   { profile_id: 1, question_1: "Serviço automotivo", question_2: "Funilaria",
-    question_3: "Pintura do teto"},
+    question_3: "Pintura do teto", response: "Sucesso", latitude: -23.5664259,
+    longitude: -46.7030554 },
 
   { profile_id: 1, question_1: "Procuro encanador", question_2: "Vazamento",
-    question_3: "Vazamento de água na cozinha"},
+    question_3: "Vazamento de água na cozinha", response: "Sucesso", 
+    latitude: -23.5664259, longitude: -46.7030554},
 
   { profile_id: 1, question_1: "Marcenaria", question_2: "Reforma",
-    question_3: "Reformar armário antigo"},
+    question_3: "Reformar armário antigo", response: "Sucesso", 
+    latitude: -23.5664259, longitude: -46.7030554 },
 
   { profile_id: 2, question_1: "Procuro pedreiro", question_2: "Construção",
-    question_3: "Fazer um muro novo"}
+    question_3: "Fazer um muro novo",  response: "Sucesso", 
+    latitude: -23.7171973, longitude: -46.8483318 }
 ])
 puts "Pedidos cadastrado com sucesso"

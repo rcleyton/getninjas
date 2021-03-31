@@ -1,6 +1,10 @@
 class ProfilesController < ApplicationController
   before_action :authorize_professional!, except: %i[create]
 
+  def index
+
+  end
+
   def show
     @profile = Profile.find(params[:id])
     if current_user.profile != @profile

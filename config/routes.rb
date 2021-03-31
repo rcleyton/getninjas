@@ -1,7 +1,4 @@
-require 'sidekiq/web'
-
 Rails.application.routes.draw do
-  mount Sidekiq::Web => '/sidekiq'
   
   get "dashboard", to: "dashboard#index"
   root 'dashboard#index'

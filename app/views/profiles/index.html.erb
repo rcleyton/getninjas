@@ -1,0 +1,6 @@
+<h3>Gerenciar Perfil</h3>
+
+<ul class="list-group list-group-flush">
+    <li class="list-group-item"><%= link_to 'Ver Perfil', profile_path(current_user.profile) %></li>
+    <li class="list-group-item"><%= link_to 'Editar Perfil', edit_profile_path(current_user.profile) %></li>
+</ul>

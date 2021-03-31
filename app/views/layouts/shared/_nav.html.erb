@@ -12,7 +12,7 @@
       </span></a>
       <% if user_signed_in? %>
         <% if current_user.customer?%>
-          <%= link_to 'Meu Perfil', current_user.profile, class: 'nav-item nav-link' %>
+          <%= link_to 'Perfil', profiles_path, class: 'nav-item nav-link' %>
         <% end %>
         <%= link_to 'Sair', destroy_user_session_path, class: 'nav-item nav-link' %>
       <% end %>

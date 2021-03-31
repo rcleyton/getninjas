@@ -3,11 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    if current_user.professional? || current_user.profile
-      dashboard_path
-    else 
-      new_profile_path
-    end
+    current_user.profile.nil? ? new_profile_path : dashboard_path
   end
 
   private
