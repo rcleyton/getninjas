@@ -21,11 +21,11 @@
   <div class="form-label-group">
     <%= f.label :role, 'Cadastrar como:' %>
     <%= f.select(:role, [['Cliente', 'customer'], 
-                         ['Profissional', 'professional']]) %>
+                         ['Profissional', 'professional']], {class: "form-control"}) %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Cadastrar", class: "btn btn-lg btn-primary btn-block" %>
+    <%= f.submit "Cadastrar", class: "btn btn-lg btn-dark btn-block" %>
   </div>
 <% end %>
 

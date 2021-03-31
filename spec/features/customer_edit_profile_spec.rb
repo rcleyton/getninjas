@@ -1,11 +1,12 @@
 require 'rails_helper'
 
 feature 'Customer edit profile' do
-  scenario 'successfully' do
-    xcustomer = create(:user)
+  xscenario 'successfully' do
+    customer = create(:user)
     profile = create(:profile)
 
     login_as customer, scope: :user
+    visit dashboard_path
 
     click_on 'Perfil'
     click_on 'Editar Perfil'

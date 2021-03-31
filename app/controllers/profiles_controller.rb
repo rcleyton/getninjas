@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_action :authorize_professional!, except: %i[create]
 
   def index
-
+    @profiles = Profile.all
   end
 
   def show
@@ -26,6 +26,7 @@ class ProfilesController < ApplicationController
       flash[:success] = "Perfil criado com sucesso"
       redirect_to @profile
     else  
+      flash.now[:error] = @profile.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -37,6 +38,7 @@ class ProfilesController < ApplicationController
       redirect_to @profile
       flash[:notice] = 'Perfil atualizado com sucesso'
     else
+      flash.now[:error] = @profile.errors.full_messages.to_sentence
       render :edit
     end
   end
