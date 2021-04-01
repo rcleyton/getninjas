@@ -1,7 +1,10 @@
 <% unless current_user.professional?%>
-  <p>
+  <% if current_user.profile.nil? %>
+    <% flash.now[:warn] = "Crie seu perfil antes de solicitar um orçamentos" %>
+    <%= link_to "Criar Perfil", new_profile_path, class: "btn btn-dark" %>
+  <% else %>
     <%= link_to 'Solicitar orçamento', new_order_path, class: "btn btn-dark" %>
-  </p>
+  <% end %>
 <% end %>
 
 <h3>Pedidos de orçamentos</h3>

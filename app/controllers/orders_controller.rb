@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
       flash[:success] = "Pedido criado com sucesso"
       redirect_to @order
     else
-      flash.now[:error] = "Crie um perfil antes de solicitar orçamento"
+      flash.now[:error] = @order.errors.full_messages.to_sentence
       render :new
     end
   end

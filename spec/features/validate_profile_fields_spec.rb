@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Validate profile form' do
-      scenario 'successfully' do
+  scenario 'successfully' do
     customer = create(:user)
     profile = create(:profile)
 

@@ -7,7 +7,6 @@ ruby '2.7.2'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'factory_bot_rails'
 gem 'geocoder'
 gem 'jbuilder', '~> 2.7'
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
@@ -23,6 +22,8 @@ gem 'webpacker', '~> 5.0'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
+  gem 'database_cleaner-active_record'
+  gem 'factory_bot_rails'
   gem 'rspec-rails'
 end
 

@@ -1,6 +1,15 @@
 <h3>Gerenciar Perfil</h3>
 
-<ul class="list-group list-group-flush">
+<% if current_user.profile.nil? %>
+
+  <h3>Perfil não preenchido</h3>
+  <%= link_to "Criar Perfil", new_profile_path, class: "btn btn-dark" %>
+
+<% else %>
+
+  <ul class="list-group list-group-flush">
     <li class="list-group-item"><%= link_to 'Ver Perfil', profile_path(current_user.profile) %></li>
     <li class="list-group-item"><%= link_to 'Editar Perfil', edit_profile_path(current_user.profile) %></li>
-</ul>
+  </ul>
+  
+<% end %>
