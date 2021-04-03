@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Validate order form' do
-  DatabaseCleaner.clean_with(:truncation)
+  #DatabaseCleaner.clean_with(:truncation)
   scenario 'successfully' do
     customer = create(:user)
     profile = create(:profile, user_id: 1)

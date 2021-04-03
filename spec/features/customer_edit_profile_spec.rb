@@ -1,13 +1,16 @@
 require 'rails_helper'
 
 feature 'Customer edit profile' do
-  xscenario 'successfully' do
-    customer = create(:user)
-    profile = create(:profile)
+  scenario 'successfully' do
+    user = User.create!(email: 'teste@teste.com.br', 
+                        password: '12345678', id: 100)
+    profile = create(:profile, user_id: 100)
 
-    login_as customer, scope: :user
     visit dashboard_path
-
+    fill_in 'Email', with: user.email
+    fill_in 'Senha', with: user.password
+    click_on 'Entrar'
+    
     click_on 'Perfil'
     click_on 'Editar Perfil'
     
@@ -27,6 +30,6 @@ feature 'Customer edit profile' do
     expect(page).to have_content(profile.street)
     expect(page).to have_content(profile.zip_code)
     expect(page).to have_content(profile.state)
-    expect(page).to have_content("Perfil atualizado com sucesso!")
+    expect(page).to have_content("Perfil atualizado com sucesso")
   end
 end
