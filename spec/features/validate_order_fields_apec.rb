@@ -16,8 +16,11 @@ feature 'Validate order form' do
     fill_in "Informe os detalhes do serviço", with: " "
     click_on "Criar"
     
-    expect(page).to have_content("Informe a categoria do serviço não pode ficar em branco")
-    expect(page).to have_content("Informe a subcategoria do serviço não pode ficar em branco")
-    expect(page).to have_content("Informe os detalhes do serviço não pode ficar em branco")
+    expect(page).to have_content("Informe a categoria do serviço não pode "\
+                                 "ficar em branco")
+    expect(page).to have_content("Informe a subcategoria do serviço não pode "\
+                                 "ficar em branco")
+    expect(page).to have_content("Informe os detalhes do serviço não pode "\
+                                 "ficar em branco")
   end
 end

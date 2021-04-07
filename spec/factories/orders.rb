@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :order do
-    question_1 { "Automóvel" }
+    question_1 { "Serviço automotivo" }
     question_2 { "Funilaria" }
     question_3 { "Pintura" }
     latitude { 1.5 }

@@ -24,6 +24,7 @@ feature 'Customer complete profile' do
     expect(page).to have_content(profile.street)
     expect(page).to have_content(profile.zip_code)
     expect(page).to have_content(profile.state)
+    expect(page).to have_content("Perfil criado com sucesso")
   end
   
 end

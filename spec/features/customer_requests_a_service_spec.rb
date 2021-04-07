@@ -1,12 +1,17 @@
 require 'rails_helper'
 
 feature 'Customer requests a service' do
-  xscenario 'successfully' do
-    customer = create(:user, :customer)
+  scenario 'successfully' do
+    user = User.create!(email: 'teste@teste.com.br', 
+                        password: '12345678', id: 100)
+    profile = create(:profile, user_id: 100)
     order = create(:order)
 
-    login_as customer, scope: :user
     visit dashboard_path
+    fill_in 'Email', with: user.email
+    fill_in 'Senha', with: user.password
+    click_on 'Entrar'
+    
     click_on 'Solicitar orçamento'
 
     fill_in 'Informe a categoria do serviço', with: order.question_1
@@ -17,5 +22,6 @@ feature 'Customer requests a service' do
     expect(page).to have_content(order.question_1)
     expect(page).to have_content(order.question_3)
     expect(page).to have_content(order.question_3)
+    expect(page).to have_content('Pedido criado com sucesso')
   end
 end

@@ -10,7 +10,9 @@ feature 'Professional creates a new account' do
     select 'Profissional', from: 'Cadastrar como:'
     click_on 'Cadastrar'
 
-    expect(page).to have_content('Login efetuado com sucesso. Se não foi autorizado, a confirmação será enviada por e-mail.')
+    expect(page).to have_content('Login efetuado com sucesso. Se não foi '\
+                                 'autorizado, a confirmação será enviada '\
+                                 'por e-mail.')
     expect(page).not_to have_link('Entrar')
     expect(page).to have_link('Sair')
   end
